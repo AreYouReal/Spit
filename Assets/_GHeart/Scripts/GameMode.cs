@@ -30,6 +30,7 @@ public class GameMode : MonoBehaviour {
     [SerializeField] private TMP_Text m_uiCurrentScore;
     [SerializeField] private TMP_Text m_uiBestScore;
     [SerializeField] private GameObject m_uiNewBestScoreLabel;
+    [SerializeField] private GameObject m_uiProjectileForceSlider;
     
 
     private static GameMode m_instance;
@@ -63,6 +64,7 @@ public class GameMode : MonoBehaviour {
     public void BeginPlay() {
         m_remainedTime = m_initialTime;
         m_uiPlay.gameObject.SetActive(false);
+        m_uiProjectileForceSlider.SetActive(true);
         m_projectileSpawner.enabled = true;
         m_running = true;
     }
@@ -86,6 +88,7 @@ public class GameMode : MonoBehaviour {
         m_elapsedTime = 0.0f;
         m_remainedTime = 0.0f;
         
+        m_uiProjectileForceSlider.SetActive(false);
         m_uiPlay.gameObject.SetActive(true);
         m_projectileSpawner.enabled = false;
     }
