@@ -365,7 +365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_scoreCarrier: {fileID: 1089327226}
   m_xBounds: {x: -20, y: 20}
-  m_MoveTime: 15
+  m_MoveTime: 20
+  m_MoveTimeRange: {x: 15, y: 20}
   m_respawnCooldownInSeconds: {x: 2, y: 3}
 --- !u!1001 &151442118
 PrefabInstance:
@@ -383,7 +384,7 @@ PrefabInstance:
     - target: {fileID: 3600181378126538248, guid: 8136a140341fd43e6bcc332f815022fa,
         type: 3}
       propertyPath: m_score
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5968261816114817332, guid: 8136a140341fd43e6bcc332f815022fa,
         type: 3}
@@ -627,7 +628,7 @@ PrefabInstance:
     - target: {fileID: 3600181378126538248, guid: cc5b63511f89642b4acfd7ccb7a1e4a0,
         type: 3}
       propertyPath: m_score
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5968261816114817332, guid: cc5b63511f89642b4acfd7ccb7a1e4a0,
         type: 3}
@@ -777,7 +778,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_scoreCarrier: {fileID: 362283255}
   m_xBounds: {x: -15, y: 15}
-  m_MoveTime: 15
+  m_MoveTime: 35
+  m_MoveTimeRange: {x: 20, y: 30}
   m_respawnCooldownInSeconds: {x: 0.5, y: 1}
 --- !u!1001 &426411784
 PrefabInstance:
@@ -1666,7 +1668,12 @@ PrefabInstance:
     - target: {fileID: 3600181378126538248, guid: 6f7256bc614524beb8ecb64042f3efdd,
         type: 3}
       propertyPath: m_score
-      value: 10
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774274329818053603, guid: 6f7256bc614524beb8ecb64042f3efdd,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5968261816114817332, guid: 6f7256bc614524beb8ecb64042f3efdd,
         type: 3}
@@ -1818,6 +1825,7 @@ MonoBehaviour:
   m_scoreCarrier: {fileID: 339479155}
   m_xBounds: {x: -20, y: 20}
   m_MoveTime: 25
+  m_MoveTimeRange: {x: 10, y: 25}
   m_respawnCooldownInSeconds: {x: 3, y: 5}
 --- !u!1001 &831009609
 PrefabInstance:
@@ -2754,7 +2762,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1881299637}
   - {fileID: 1574358333}
   - {fileID: 948577093}
   m_Father: {fileID: 2101502446}
@@ -3755,7 +3762,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_scoreCarrier: {fileID: 2074195062}
   m_xBounds: {x: -15, y: 15}
-  m_MoveTime: 20
+  m_MoveTime: 30
+  m_MoveTimeRange: {x: 25, y: 35}
   m_respawnCooldownInSeconds: {x: 0.5, y: 1}
 --- !u!1001 &1788275703
 PrefabInstance:
@@ -3861,14 +3869,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881299636}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 175277533}
   - {fileID: 1030290548}
-  m_Father: {fileID: 1186215868}
+  m_Father: {fileID: 2101502446}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
@@ -4039,7 +4047,12 @@ PrefabInstance:
     - target: {fileID: 3600181378126538248, guid: 1eb460ef8c34c4951959af7275d0ff99,
         type: 3}
       propertyPath: m_score
-      value: 10
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774274329818053603, guid: 1eb460ef8c34c4951959af7275d0ff99,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5968261816114817332, guid: 1eb460ef8c34c4951959af7275d0ff99,
         type: 3}
@@ -4566,6 +4579,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1186215868}
+  - {fileID: 1881299637}
   m_Father: {fileID: 1940463547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4606,7 +4620,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

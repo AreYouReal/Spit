@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5968261816114817332}
-  - component: {fileID: 3774274329818053603}
   - component: {fileID: 3600181378126538248}
+  - component: {fileID: 6875879504552891610}
   m_Layer: 8
   m_Name: ScoreCarrier_Vehicle_1
   m_TagString: Untagged
@@ -34,8 +34,23 @@ Transform:
   - {fileID: 8930883910460582793}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &3774274329818053603
-CircleCollider2D:
+--- !u!114 &3600181378126538248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799653501488938597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c3f5ba6a22243e58d52cf3a1c833fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_score: 0
+  m_scoreVFXPrefab: {fileID: 7834163279004026035, guid: eeb6c805ac4a043e3ad3cd13b74b33cd,
+    type: 3}
+--- !u!61 &6875879504552891610
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -67,21 +82,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 4
---- !u!114 &3600181378126538248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799653501488938597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39c3f5ba6a22243e58d52cf3a1c833fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_score: 0
+  m_Size: {x: 7.98, y: 3.27}
+  m_EdgeRadius: 0
 --- !u!1001 &8930883910460983377
 PrefabInstance:
   m_ObjectHideFlags: 0

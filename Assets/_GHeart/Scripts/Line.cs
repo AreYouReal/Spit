@@ -14,6 +14,8 @@ public class Line : MonoBehaviour {
 
     [SerializeField] private float m_MoveTime;
 
+    [SerializeField] private Vector2 m_MoveTimeRange;
+
     [SerializeField] private Vector2 m_respawnCooldownInSeconds;
 
     #endregion
@@ -37,6 +39,9 @@ public class Line : MonoBehaviour {
 
 
         float aimXPos = leftMove ? m_xBounds.x : m_xBounds.y;
+
+        m_MoveTime = UnityEngine.Random.Range(m_MoveTimeRange.x, m_MoveTimeRange.y);
+        
         m_scoreCarrier.transform.DOMoveX(aimXPos, m_MoveTime).OnComplete(() => {
             LaunchTheCarrierTask().Forget();
         });

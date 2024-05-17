@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_score: 0
+  m_scoreVFXPrefab: {fileID: 7834163279004026035, guid: eeb6c805ac4a043e3ad3cd13b74b33cd,
+    type: 3}
 --- !u!1 &8015426617073988315
 GameObject:
   m_ObjectHideFlags: 0

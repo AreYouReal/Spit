@@ -51,7 +51,7 @@ public class GameMode : MonoBehaviour {
             m_elapsedTime += Time.deltaTime;
             m_remainedTime -= Time.deltaTime;
 
-            m_time.text = Mathf.RoundToInt(m_remainedTime).ToString();
+            m_time.text = $"{Mathf.RoundToInt(m_remainedTime)}s";
             
             if (m_remainedTime <= 0.0f) {
                 EndPlay();
@@ -82,8 +82,8 @@ public class GameMode : MonoBehaviour {
         m_uiNewBestScoreLabel.SetActive(newBestScore);
         
         
-        m_uiBestScore.text = Mathf.RoundToInt(GetBestScore()).ToString();
-        m_uiCurrentScore.text = Mathf.RoundToInt(m_elapsedTime).ToString();
+        m_uiBestScore.text = $"{Mathf.RoundToInt(GetBestScore())}s";
+        m_uiCurrentScore.text = $"{Mathf.RoundToInt(m_elapsedTime)}s";
         
         m_elapsedTime = 0.0f;
         m_remainedTime = 0.0f;
