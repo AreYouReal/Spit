@@ -20,7 +20,7 @@ public class Line : MonoBehaviour {
 
     #region Unity Event Functions
     private void Start() {
-        LaunchTheCarrierTask().Forget();
+        LaunchTheScoreCarrier();
     }
     #endregion
 
@@ -40,6 +40,13 @@ public class Line : MonoBehaviour {
         m_scoreCarrier.transform.DOMoveX(aimXPos, m_MoveTime).OnComplete(() => {
             LaunchTheCarrierTask().Forget();
         });
+
+        Vector3 localScale = m_scoreCarrier.transform.localScale;
+
+        localScale.x *= -Mathf.Sign(aimXPos);
+
+        m_scoreCarrier.transform.localScale = localScale;
+
     }
 
     private async UniTask LaunchTheCarrierTask() {

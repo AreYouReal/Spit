@@ -14,10 +14,6 @@ public class ProjectileDamage : MonoBehaviour {
     private void Start() {
         Destroy(gameObject, m_lifetime);
     }
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        Debug.LogWarning($"ON TRIGGER ENTER : {other.name}");
-    }
     #endregion
     
 }

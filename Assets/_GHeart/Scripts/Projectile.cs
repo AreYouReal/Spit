@@ -11,11 +11,10 @@ public class Projectile : MonoBehaviour {
     
     #region Public
     public void BeginPlay(float a_distance) {
-        transform.DOScale(0.25f, 0.5f);
+        transform.DOMoveZ(10, 0.5f);
         transform.DOMoveY(transform.position.y + a_distance, 0.5f).OnComplete(() => {
             Instantiate(m_projectileDamagePrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            
         });
     }
     #endregion
