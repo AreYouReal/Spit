@@ -7,6 +7,8 @@ using UnityEngine;
 public class GameMode : MonoBehaviour {
 
 
+    public const string BEST_SCORE_KEY = "BestScore";
+
     public static GameMode I => m_instance;
     
     #region Fields
@@ -24,6 +26,10 @@ public class GameMode : MonoBehaviour {
     [SerializeField] private TMP_Text m_time;
 
     [SerializeField] private GameObject m_uiPlay;
+
+    [SerializeField] private TMP_Text m_uiCurrentScore;
+    [SerializeField] private TMP_Text m_uiBestScore;
+    [SerializeField] private GameObject m_uiNewBestScoreLabel;
     
 
     private static GameMode m_instance;
@@ -45,10 +51,10 @@ public class GameMode : MonoBehaviour {
             m_remainedTime -= Time.deltaTime;
 
             m_time.text = Mathf.RoundToInt(m_remainedTime).ToString();
-        }
-
-        if (m_remainedTime <= 0.0f) {
-            EndPlay();
+            
+            if (m_remainedTime <= 0.0f) {
+                EndPlay();
+            }
         }
     }
     #endregion
@@ -58,7 +64,7 @@ public class GameMode : MonoBehaviour {
         m_remainedTime = m_initialTime;
         m_uiPlay.gameObject.SetActive(false);
         m_projectileSpawner.enabled = true;
-
+        m_running = true;
     }
     
     public void AddScore(float a_score) {
@@ -68,13 +74,42 @@ public class GameMode : MonoBehaviour {
     }
 
     public void EndPlay() {
-
+        m_running = false;
+        
+        bool newBestScore = UpdateBestScore(m_elapsedTime);
+        m_uiNewBestScoreLabel.SetActive(newBestScore);
+        
+        
+        m_uiBestScore.text = Mathf.RoundToInt(GetBestScore()).ToString();
+        m_uiCurrentScore.text = Mathf.RoundToInt(m_elapsedTime).ToString();
+        
         m_elapsedTime = 0.0f;
         m_remainedTime = 0.0f;
         
         m_uiPlay.gameObject.SetActive(true);
         m_projectileSpawner.enabled = false;
     }
+    #endregion
+
+
+    #region Helpers
+
+
+    private bool UpdateBestScore(float a_newScore) {
+        float currentBest = GetBestScore();
+        if (currentBest < a_newScore) {
+            PlayerPrefs.SetFloat(BEST_SCORE_KEY, a_newScore);
+            return (true);
+        }
+
+        return (false);
+    }
+
+    private float GetBestScore() {
+        return (PlayerPrefs.GetFloat(BEST_SCORE_KEY, 0));
+    }
+
+
     #endregion
 
 
